@@ -2,7 +2,7 @@ import pool from '../lib/utils/pool.js';
 import setup from '../data/setup.js';
 import request from 'supertest';
 import app from '../lib/app.js';
-import QuotesModel from '../lib/models/CharacterModel.js';
+import CharacterModel from '../lib/models/CharacterModel.js';
 
 
 describe('routes to get, post, put, and delete', () => {
@@ -12,7 +12,7 @@ describe('routes to get, post, put, and delete', () => {
 
   it('POSTs a new character to the data-table', async () => {
     return request(app)
-      .post('/api/v1/character')
+      .post('/api/character')
       .then(res => {
         expect(res.body).toEqual({
           id: 1,

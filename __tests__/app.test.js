@@ -15,8 +15,8 @@ describe('routes to get, post, put, and delete', () => {
       .post('/api/character')
       .then(res => {
         expect(res.body).toEqual({
-          id: 1,
-          name: 'Rick Sanchez'
+          id: (expect.any(Number)),
+          name: (expect.any(String)),
         })
       })
   })

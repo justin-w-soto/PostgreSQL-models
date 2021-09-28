@@ -2,7 +2,7 @@ import pool from '../lib/utils/pool.js';
 import setup from '../data/setup.js';
 import request from 'supertest';
 import app from '../lib/app.js';
-import CharacterModel from '../lib/models/CharacterModel.js';
+// import CharacterModel from '../lib/models/CharacterModel.js';
 
 
 describe('routes to get, post, put, and delete', () => {

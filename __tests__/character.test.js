@@ -2,6 +2,7 @@ const pool = require('../lib/utils/pool.js');
 const setup = require ('../data/setup.js');
 const request = require ('supertest');
 const app = require ('../lib/app.js');
+const Character = require ('../lib/models/CharacterModel.js');
 
 
 describe('crud routes', () => {
@@ -19,13 +20,11 @@ describe('crud routes', () => {
   
   })
 
-//   it('should GET all characters from the table', () => {
-//     return request(app)
-//     .get('/api/v1/character/')
-//     .then(res => {
-//       expect(res.body).toEqual([{ id:'1', name:'Rick Sanchez'}]);
-//     });
-//   })
+  // it('should GET all characters from the table', async () => {
+  //   const res = await request(app)
+  //         .get('/api/v1/character');
+  //     expect(res.body).toEqual([{ id: '1', name: 'Rick Sanchez' }]);
+  // })
   afterAll(() => {
     pool.end();
   });

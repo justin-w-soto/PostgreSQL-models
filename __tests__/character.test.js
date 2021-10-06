@@ -19,13 +19,11 @@ describe('crud routes', () => {
   
   })
 
-//   it('should GET all characters from the table', () => {
-//     return request(app)
-//     .get('/api/v1/character/')
-//     .then(res => {
-//       expect(res.body).toEqual([{ id:'1', name:'Rick Sanchez'}]);
-//     });
-//   })
+  // it('should GET all characters from the table', async () => {
+  //   const res = await request(app)
+  //         .get('/api/v1/character');
+  //     expect(res.body).toEqual([{ id: '1', name: 'Rick Sanchez' }]);
+  // })
   afterAll(() => {
     pool.end();
   });

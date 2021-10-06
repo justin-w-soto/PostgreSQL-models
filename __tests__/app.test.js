@@ -1,24 +1,22 @@
-import pool from '../lib/utils/pool.js';
-import setup from '../data/setup.js';
-import request from 'supertest';
-import app from '../lib/app.js';
-// import CharacterModel from '../lib/models/CharacterModel.js';
+const pool = require('../lib/utils/pool.js');
+const setup = require ('../data/setup.js');
+const request = require ('supertest');
+const app = require ('../lib/app.js');
 
 
-describe('routes to get, post, put, and delete', () => {
+describe('crud routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
 
-  it('POSTs a new character to the data-table', async () => {
-    return request(app)
-      .post('/api/character')
-      .then(res => {
-        expect(res.body).toEqual({
-          id: (expect.any(Number)),
-          name: (expect.any(String)),
-        })
-      })
+  it('should save a character to the table', async () => {
+    const charObject = {
+    id: 1,  
+    name: expect.any(String)
+    };
+   
+  await request(app).post('/api/v1/character').send(charObject);
+  
   })
 
   afterAll(() => {

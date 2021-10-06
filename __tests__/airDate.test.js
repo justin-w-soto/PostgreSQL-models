@@ -15,8 +15,9 @@ describe('crud routes', () => {
     air_date: 'December 2, 2013'
     };
    
-  await request(app).post('/api/v1/airdate').send(airDateObj);
-  
+  const response = await request(app).post('/api/v1/airdate').send(airDateObj);
+  expect(response.body).toEqual(airDateObj);
+
   })
 
   // it('should GET all air dates from the table', async () => {

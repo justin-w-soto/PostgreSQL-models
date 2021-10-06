@@ -12,10 +12,11 @@ describe('crud routes', () => {
   it('should POST an episode to the table', async () => {
     const episodeObject = {
     id: 1,  
-    name: expect.any(String)
+    name: 'Pilot'
     };
    
-  await request(app).post('/api/v1/episode').send(episodeObject);
+  const response = await request(app).post('/api/v1/episode').send(episodeObject);
+  expect(response.body).toEqual(episodeObject);
   
   })
 

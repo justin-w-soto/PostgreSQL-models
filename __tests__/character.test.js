@@ -9,19 +9,21 @@ describe('crud routes', () => {
     return setup(pool);
   });
 
-  it('should POST a character to the table', async () => {
-    const charObject = {
-    id: 1,  
-    name: expect.any(String)
-    };
-   
-  await request(app).post('/api/v1/character').send(charObject);
-  
-  })
+  it('POSTS a character into the database', async () => {
+    return request(app)
+      .post('/api/v1/character')
+      .send({id: '1', name: 'Rick Sanchez'})
+      .then(res => {
+        expect(res.body).toEqual({id: '1', name: 'Rick Sanchez'});
+      });
+  });
 
+
+
+ 
   // it('should GET all characters from the table', async () => {
   //   const res = await request(app)
-  //         .get('/api/v1/character');
+  //         .get('/api/v1/character/');
   //     expect(res.body).toEqual([{ id: '1', name: 'Rick Sanchez' }]);
   // })
   afterAll(() => {

@@ -9,7 +9,7 @@ describe('crud routes', () => {
     return setup(pool);
   });
 
-  it('should save a character to the table', async () => {
+  it('should POST a character to the table', async () => {
     const charObject = {
     id: 1,  
     name: expect.any(String)
@@ -19,6 +19,13 @@ describe('crud routes', () => {
   
   })
 
+//   it('should GET all characters from the table', () => {
+//     return request(app)
+//     .get('/api/v1/character/')
+//     .then(res => {
+//       expect(res.body).toEqual([{ id:'1', name:'Rick Sanchez'}]);
+//     });
+//   })
   afterAll(() => {
     pool.end();
   });

@@ -12,7 +12,7 @@ describe('crud routes', () => {
   it('should POST an image url to the table', async () => {
     const imageObject = {
     id: 1,  
-    name: expect.any(String)
+    url: expect.any(String)
     };
    
   await request(app).post('/api/v1/character/avatar').send(imageObject);
@@ -24,6 +24,15 @@ describe('crud routes', () => {
   //         .get('/api/v1/character/avatar/');
   //     expect(res.body).toEqual([{ id: '1', url: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg' }]);
   // })
+
+  it('should GET an image url by character id', async () => {
+      const URL = {
+        id: 1, 
+        url: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg' 
+      };
+      
+      await request(app).post('/api/v1/character/avatar').send(URL);
+  })
   afterAll(() => {
     pool.end();
   });

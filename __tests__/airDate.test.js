@@ -9,20 +9,20 @@ describe('crud routes', () => {
     return setup(pool);
   });
 
-  it('should POST a character to the table', async () => {
-    const charObject = {
+  it('should POST an airdate to the table', async () => {
+    const airDateObj = {
     id: 1,  
-    name: expect.any(String)
+    air_date: 'December 2, 2013'
     };
    
-  await request(app).post('/api/v1/character').send(charObject);
+  await request(app).post('/api/v1/airdate').send(airDateObj);
   
   })
 
-  // it('should GET all characters from the table', async () => {
+  // it('should GET all air dates from the table', async () => {
   //   const res = await request(app)
-  //         .get('/api/v1/character');
-  //     expect(res.body).toEqual([{ id: '1', name: 'Rick Sanchez' }]);
+  //         .get('/api/v1/airdate');
+  //     expect(res.body).toEqual([{ id: '1', air_date: 'December 2, 2013' }]);
   // })
   afterAll(() => {
     pool.end();
